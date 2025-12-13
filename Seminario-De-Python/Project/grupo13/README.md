@@ -60,6 +60,17 @@ python -m pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```
 
+Si se producen errores al instalar dependencias (especialmente en Windows), puede utilizar el archivo alternativo sin versiones fijas:
+
+```bash
+pip install -r requirements_alt.txt
+```
+
+bash
+pip install -r requirements.txt
+
+````
+
 ---
 
 ## ⚙️ Procesamiento de datasets
@@ -73,7 +84,7 @@ jupyter_notebooks/Procesamiento/datasets_aeropuertos/inciso_1.ipynb
 jupyter_notebooks/Procesamiento/datasets_conectividad/inciso_2.ipynb
 jupyter_notebooks/Procesamiento/datasets_censo22/inciso_3.ipynb
 jupyter_notebooks/Procesamiento/datasets_lagos/inciso_4.ipynb
-```
+````
 
 Se recomienda abrirlos y ejecutarlos usando **VS Code** o **Jupyter Lab**.
 
