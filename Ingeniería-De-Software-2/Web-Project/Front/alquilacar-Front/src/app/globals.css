@@ -1,0 +1,74 @@
+@import "./normalize.css";
+:root {
+    box-sizing: border-box;
+    --dark: #363636;
+    --mediumGrey: #4b4a49;
+    --slateGrey: #929292;
+    --lightGrey: #cecece;
+    --background: #fffaf0;
+    --nav: #2c4f48;
+    --footer: #1d3a35;
+    --white: #ffffff;
+    --primary: #3462eb;
+    --selectedOption: #688eff71;
+    --hoverOption: #688effc2;
+    --error: #ff000099;
+    --success: #00800099;
+    --grey: #464e4d;
+    --darkGreen: #1d3a35;
+    --mediumGreen: #2c4f48;
+    --lightGreen: #418372;
+    --darkYellow: #ffd04f;
+    --lightYellow: #fff0ae;
+    --tableHeader: #f7f2a7b3;
+    --tableData1: #fff3b7b3;
+    --tableData2: #f7f2a7b3;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+main {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--background);
+    position: relative;
+}
+body.overflowHidden {
+    overflow-y: hidden;
+}
+
+main {
+    width: 100%;
+    min-height: 47vw;
+}
+
+.toast-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 0 !important;
+    left: unset !important;
+    color: #696969 !important;
+    cursor: pointer !important;
+    transition: color 0.3s ease !important;
+    border: none !important;
+}
+.toast-close:hover {
+    color: #2d3748 !important;
+    background-color: transparent !important;
+}

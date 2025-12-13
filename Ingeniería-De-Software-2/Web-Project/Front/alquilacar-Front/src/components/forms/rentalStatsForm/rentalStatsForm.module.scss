@@ -1,0 +1,12 @@
+.formContainer {
+    width: 60vw;
+    position: relative;
+    margin-bottom: 70px;
+    .inputs {
+        display: flex;
+        justify-content: space-between;
+        .input {
+            width: 48%;
+        }
+    }
+}

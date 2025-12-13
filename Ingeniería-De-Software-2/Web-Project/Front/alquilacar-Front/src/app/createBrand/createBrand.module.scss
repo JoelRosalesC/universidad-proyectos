@@ -1,0 +1,9 @@
+@use "@/app/mixins.scss" as mixins;
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        @include mixins.title-style;
+    }
+}

@@ -1,0 +1,26 @@
+.crearBtn {
+    text-decoration: none;
+    background-color: var(--dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--background);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.3vw;
+    font-weight: 500;
+    width: fit-content;
+    height: fit-content;
+    &:visited {
+        color: var(--background);
+    }
+    svg {
+        transform: rotate(45deg);
+        height: 23px;
+        width: 23px;
+    }
+    &:hover {
+        background-color: var(--lightGreen);
+    }
+}

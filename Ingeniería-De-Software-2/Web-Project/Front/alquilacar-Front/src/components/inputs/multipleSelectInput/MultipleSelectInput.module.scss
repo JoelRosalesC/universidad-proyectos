@@ -1,0 +1,231 @@
+.container {
+    grid-column: 2 span;
+
+    .selectWrapper {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        user-select: none;
+        cursor: pointer;
+        font-size: clamp(1rem, 1vw, 1.25rem);
+        color: var(--mediumGrey);
+        align-items: center;
+        background-color: var(--white);
+        border-radius: 5px;
+        padding: 14px;
+        border: none;
+        outline: 2px solid var(--lightGrey);
+        transition: outline-color 0.4s;
+        height: fit-content;
+        min-height: 50px;
+        max-height: 130px;
+
+        &.focus,
+        &.withValue {
+            label {
+                top: -10px;
+                transform-origin: top left;
+                font-size: clamp(0.8rem, 1vw, 1rem);
+            }
+
+            .hiddenSpan {
+                width: auto;
+            }
+        }
+
+        &.focus {
+            outline-color: var(--primary);
+
+            label {
+                color: var(--primary);
+            }
+
+            .hiddenSpan {
+                background-color: var(--background);
+            }
+        }
+
+        /* Oculta los botones (flechas) del scrollbar */
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        /* Define el ancho del scrollbar y elimina el fondo */
+        ::-webkit-scrollbar {
+            width: 5px;
+            /* ancho del scrollbar */
+            background: transparent;
+            /* fondo del scrollbar transparente */
+        }
+
+        /* Estilo de la pista (track) del scrollbar */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            /* pista transparente */
+        }
+
+        /* Estilo de la "barra" (thumb) del scrollbar */
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--lightGrey);
+            cursor: pointer;
+        }
+
+        .tagsContainer {
+            display: flex;
+            gap: clamp(5px, 1vw, 20px);
+            flex-wrap: wrap;
+            min-height: fit-content;
+
+            .selectedTag {
+                display: flex;
+                align-items: center;
+                position: relative;
+                border-radius: 5px;
+                padding: 3px 18px;
+                color: var(--primary);
+                outline: 1px solid var(--primary);
+                font-size: clamp(0.75rem, 1vw, 1rem);
+                min-height: fit-content;
+                width: auto;
+                overflow: hidden;
+                transition: padding 0.2s ease-out;
+
+                &:hover {
+                    background-color: #4574ff2a;
+                    padding: 3px 28px 3px 8px;
+
+                    svg {
+                        transform: translateX(-20px);
+                        opacity: 1;
+                    }
+                }
+
+                svg {
+                    height: 10px;
+                    width: 10px;
+                    color: var(--primary);
+                    position: absolute;
+                    left: 100%;
+                    opacity: 0;
+                    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+                }
+            }
+        }
+
+        .hiddenSelect {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .chevronDown {
+            pointer-events: none;
+            color: var(--slateGrey);
+            transition: all 0.3s ease;
+        }
+
+        .open {
+            color: var(--primary);
+            transform: rotate(-90deg);
+        }
+
+        .label {
+            opacity: 1;
+            font-size: clamp(0.875rem, 1.2vw, 1.25rem);
+            position: absolute;
+            left: 0;
+            top: 30%;
+            padding-left: 14px;
+            cursor: text;
+            transition: font-size 0.4s, transform 0.4s, top 0.4s, color 0.4s;
+            color: var(--slateGrey);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hiddenSpan {
+            font-size: clamp(0.8rem, 1vw, 1rem);
+            color: transparent;
+            white-space: nowrap;
+            position: absolute;
+            left: 0;
+            margin-left: 8px;
+            top: -3px;
+            transform-origin: top left;
+            height: 3px;
+            width: 0;
+            background-color: var(--background);
+            transition: width 0.2s ease-in-out;
+            interpolate-size: allow-keywords;
+            user-select: none;
+        }
+
+        .dropdown {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            margin-top: 5px;
+            left: 0;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: 2px solid var(--lightGrey);
+            z-index: 3;
+            height: clamp(150px, 9vw, 175px);
+            overflow: auto;
+            border-right: 10px solid var(--white);
+            border-top: 10px solid var(--white);
+            border-bottom: 10px solid var(--white);
+            border-left: 10px solid var(--white);
+
+            .option {
+                padding: 14px;
+
+                &:hover {
+                    background-color: var(--hoverOption);
+                }
+            }
+
+            .optionSelected {
+                background-color: var(--selectedOption);
+            }
+        }
+    }
+
+    .inputError {
+        outline-color: var(--error);
+
+        .label {
+            color: var(--error);
+        }
+
+        .chevronDown {
+            color: var(--error);
+        }
+
+        .open {
+            color: var(--selectedOption);
+        }
+    }
+
+    .error {
+        border-radius: 0.5vw;
+        color: var(--error);
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        font-size: clamp(0.75rem, 1vw, 1.25rem);
+        padding: 0;
+        margin-top: 10px;
+
+        @starting-style {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+    }
+}

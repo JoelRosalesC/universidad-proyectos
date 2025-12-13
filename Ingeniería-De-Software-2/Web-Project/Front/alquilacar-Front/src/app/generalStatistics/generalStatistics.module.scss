@@ -1,0 +1,35 @@
+@use "@/app/mixins.scss" as mixins;
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        @include mixins.title-style;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .dataContainer {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        .button {
+            width: fit-content;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 30px 0 50px 50px;
+            height: clamp(38px, 2.5vw, 55px);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            font-weight: bold;
+            padding: clamp(10px, 0.8vw, 15px) clamp(25px, 2vw, 28px);
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+        }
+    }
+}

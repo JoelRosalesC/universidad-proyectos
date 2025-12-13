@@ -1,0 +1,12 @@
+.formContainer {
+    .hidden {
+        display: none;
+    }
+    .cancelBtn {
+        color: var(--mediumGrey);
+        transition: color 0.3s ease;
+        &:hover {
+            color: var(--error);
+        }
+    }
+}

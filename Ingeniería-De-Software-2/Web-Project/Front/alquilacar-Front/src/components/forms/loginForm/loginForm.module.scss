@@ -1,0 +1,33 @@
+.loginFormContainer {
+    width: 30vw;
+    margin-bottom: 15px;
+}
+.twofaContainer {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    .twofaFormContainer {
+        width: fit-content;
+        background-color: var(--white);
+        padding: 25px 50px 20px 50px;
+        border-radius: 2vw;
+        box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.15);
+        .title {
+            color: var(--dark);
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        .twofaForm {
+            width: 100%;
+        }
+    }
+}

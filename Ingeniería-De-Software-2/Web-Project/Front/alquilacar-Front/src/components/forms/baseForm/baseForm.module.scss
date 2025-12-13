@@ -1,0 +1,115 @@
+/* Animación para success: scale up y vuelve a la normalidad */
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animación para error: sacudida horizontal */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-5px);
+    }
+
+    20% {
+        transform: translateX(5px);
+    }
+
+    30% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        .buttonsContainer {
+            display: flex;
+            justify-content: space-between;
+
+            .sendButton {
+                height: clamp(38px, 2.5vw, 52px);
+                color: var(--primary);
+                border: 2px solid var(--primary);
+            }
+
+            svg {
+                width: clamp(16px, 1.5vw, 28px);
+            }
+
+            button {
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+                font-weight: bold;
+                padding: clamp(10px, 0.8vw, 15px) clamp(25px, 2vw, 28px);
+                font-size: clamp(0.8rem, 1.5vw, 1rem);
+            }
+
+            .success {
+                cursor: default;
+                color: var(--success);
+                border-color: var(--success);
+                animation: grow 0.7s ease-in-out;
+            }
+
+            .error {
+                cursor: default;
+                color: var(--error);
+                border-color: var(--error);
+                animation: shake 0.5s ease-in-out;
+            }
+        }
+    }
+}
+.generalError {
+    border: 1px solid var(--error);
+    padding: 15px;
+    border-radius: 0.5vw;
+    color: var(--error);
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: clamp(0.75rem, 1vw, 1.25rem);
+    font-weight: 400;
+    @starting-style {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}

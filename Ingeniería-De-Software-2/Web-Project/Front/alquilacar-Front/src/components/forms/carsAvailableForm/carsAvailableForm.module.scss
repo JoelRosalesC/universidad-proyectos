@@ -1,0 +1,63 @@
+.form {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 70vw;
+    background-color: white;
+    padding: 40px 40px 25px 40px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    .inputs {
+        display: flex;
+        justify-content: center;
+        gap: 1.5vw;
+        width: 100%;
+        margin-bottom: 50px;
+        input[type="date"] {
+            display: flow;
+            position: relative;
+            padding-right: 1rem;
+        }
+        .input {
+            flex: 1;
+        }
+    }
+    button {
+        width: 100%;
+        color: white;
+        height: 3vw;
+        background-color: var(--dark);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: rgb(73, 73, 73);
+        }
+    }
+    .characteristicsContainer {
+        display: flex;
+        margin-top: 25px;
+        justify-content: space-between;
+        gap: 90px;
+        .characteristic {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            svg {
+                color: var(--success);
+            }
+            .title {
+                color: var(--mediumGrey);
+                font-size: 1.1vw;
+                margin-bottom: 10px;
+            }
+            .subtitle {
+                color: var(--slateGrey);
+                font-size: 0.9vw;
+                text-align: center;
+            }
+        }
+    }
+}

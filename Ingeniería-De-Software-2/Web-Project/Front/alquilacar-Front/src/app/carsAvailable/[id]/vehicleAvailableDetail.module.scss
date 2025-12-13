@@ -1,0 +1,81 @@
+.vehiclesContainer {
+    width: 90%;
+    margin: 5vw auto;
+    .vehicleCard {
+        display: flex;
+        background-color: white;
+        padding: 20px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+        .vehicleImg {
+            width: 35vw;
+            margin-right: 5vw;
+            border-radius: 10px;
+        }
+        .secondContainer {
+            width: 50%;
+            h1 {
+                color: var(--dark);
+                margin-top: 0;
+            }
+            .calification {
+                display: flex;
+                align-items: flex-end;
+                border-bottom: 1px solid var(--lightGrey);
+                padding-bottom: 20px;
+                width: 100%;
+                svg {
+                    color: rgb(255, 217, 0);
+                    width: 30px;
+                    height: fit-content;
+                }
+                p {
+                    margin: 0;
+                    padding-left: 10px;
+                    font-weight: 400;
+                    color: var(--mediumGrey);
+                }
+            }
+            .caracteristicas {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                .caracteristicaCard {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: rgb(255, 253, 220);
+                    width: 100%;
+                    height: fit-content;
+                    padding: 20px;
+                    border-radius: 7px;
+                    gap: 10px;
+                    .type {
+                        margin: 0;
+                        font-weight: 500;
+                        color: var(--slateGrey);
+                    }
+                    .value {
+                        margin: 0;
+                        color: var(--dark);
+                    }
+                }
+            }
+            button {
+                margin-top: 2vw;
+                width: 100%;
+                background-color: var(--dark);
+                color: var(--background);
+                border: none;
+                padding: 5px 0;
+                border-radius: 5px;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(71, 71, 71);
+                }
+            }
+        }
+    }
+}

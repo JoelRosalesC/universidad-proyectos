@@ -1,0 +1,61 @@
+@use "@/app/mixins.scss" as mixins;
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        @include mixins.title-style;
+        margin-bottom: 15px;
+    }
+    .subtitle {
+        margin: 0;
+        color: var(--mediumGrey);
+        margin-bottom: 5vw;
+        font-size: 1.4vw;
+        text-align: center;
+    }
+    .content {
+        display: flex;
+        gap: 5vw;
+        padding: 30px;
+        background-color: white;
+        width: 75vw;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 100px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        .form {
+            width: 40vw;
+            input[type="date"] {
+                display: flow;
+                position: relative;
+                padding-right: 1rem;
+            }
+        }
+        .vehicleCard {
+            .vehicleImg {
+                width: 20vw;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            .secondContainer {
+                h1 {
+                    color: var(--dark);
+                    font-size: 2vw;
+                }
+                .caracteristicas {
+                    .caracteristicaCard {
+                        p {
+                            color: var(--dark);
+                        }
+                        strong {
+                            color: var(--dark);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

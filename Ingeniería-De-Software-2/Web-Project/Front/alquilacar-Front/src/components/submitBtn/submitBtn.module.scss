@@ -1,0 +1,16 @@
+.Button {
+    padding: clamp(10px, 1vw, 15px) clamp(15px, 1.4vw, 24px);
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    border-radius: 40px;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    gap: 0.625rem;
+}
